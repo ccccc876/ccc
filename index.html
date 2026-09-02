@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">	
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GTA线上载具数据库</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-900 text-gray-100 min-h-screen">
+    <div class="container mx-auto px-4 py-6">
+        <h1 class="text-4xl font-bold mb-6">GTA线上载具数据整合库</h1>
+
+        <!-- 搜索和筛选栏 -->
+        <div class="grid sm:grid-cols-3 gap-4 mb-6">
+            <input id="searchInput" type="text" placeholder="输入载具名称搜索..." class="px-3 py-2 rounded bg-slate-700">
+            <select id="typeSelect" class="px-3 py-2 rounded bg-slate-700">
+                <option value="">全部类型</option>
+            </select>
+       <select id="sortSelect" class="px-3 py-2 rounded bg-slate-700">
+           <option value="price-desc">价格从高到低</option>
+           <option value="price-asc">价格从低到高</option>
+           <option value="topspeed-desc">最高速度从高到低</option>
+           <option value="topspeed-asc">最高速度从低到高</option>
+           <option value="laptime-asc">ccgp圈速从快到慢</option>
+           <option value="laptime-desc">ccgp圈速从慢到快</option>
+       </select>
+            <button id="openCompareBtn" class="px-4 py-2 bg-blue-600 rounded">打开对比面板</button>
+        </div>
+
+       <!-- 载具卡片容器 -->
+       <div id="vehicleList" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+       </div>
+
+
+    <!-- 对比弹窗 -->
+    <div id="compareModal" class="fixed inset-0 bg-black/70 hidden z-50 p-4 overflow-auto">
+        <div class="max-w-6xl mx-auto bg-slate-800 rounded p-6 mt-10">
+            <h2 class="text-2xl mb-4">载具对比</h2>
+            <div id="compareContent"></div>
+            <button id="closeCompare" class="mt-4 px-4 py-2 bg-red-600 rounded">关闭</button>
+        </div>
+    </div>
+
+    <!-- ==========车辆详情弹窗【不能删掉！报错就是丢了这部分】 ========== -->
+    <div id="carDetailModal" class="fixed inset-0 bg-black/80 hidden z-60 p-4 overflow-auto">
+        <div class="max-w-2xl mx-auto bg-slate-800 rounded p-6 mt-10">
+            <button id="closeDetail" class="mb-4 px-4 py-2 bg-red-600 rounded">关闭详情</button>
+            <div class="grid sm:grid-cols-2 gap-4">
+                <div>
+                    <img id="detailImg" class="w-full rounded object-cover max-h-80" src="" alt="车辆图">
+                </div>
+                <div>
+                    <h2 id="detailName" class="text-2xl font-bold mb-3"></h2>
+                    <div id="detailContent" class="space-y-1 text-gray-200"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./JS/main.js"></script>
+    <script src="./JS/filter.js"></script>
+    <script src="./JS/compare.js"></script>
+	<script src="./Api/github-webhook.js"></script>
+</body>
+</html>
