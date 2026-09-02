@@ -25,7 +25,7 @@ async function loadData(){
         renderList(allVehicles);
     } catch (e) {
         console.error("数据加载失败：", e);
-        alert("载具数据加载失败，请检查 Api/vehicles.json 文件是否存在且格式正确\n\n错误信息：" + e.message);
+        alert("载具数据加载失败，请检查 data/vehicles.json 文件是否存在且格式正确\n\n错误信息：" + e.message);
     }
 }
 
