@@ -11,6 +11,7 @@
     "braking":6.5,
     "handling":8.2,
     "source":"传奇车业",
+	"lapTime": 1.00.778,
     "image":"./assets/image/t20.jpg",
     "description":"GTA线上经典超跑，均衡的综合性能"
   },
@@ -26,6 +27,7 @@
     "braking":6.8,
     "handling":8.0,
     "source":"传奇车业",
+	"lapTime": 59.459,
     "image":"./assets/image/xa21.jpg",
     "description":"军用风格超跑"
   },
@@ -41,6 +43,7 @@
     "braking":6.3,
     "handling":7.9,
     "source":"传奇车业",
+	"lapTime": 1.00.878,
     "image":"./assets/image/zentorno.jpg",
     "description":"GTAOL经典老牌超跑，原型兰博基尼，性价比极高，改装选择丰富。"
   },
@@ -72,6 +75,7 @@
     "braking":7.5,
     "handling":9.0,
     "source":"传奇车业",
+	"lapTime": 57.924,
     "image":"./assets/image/krieger.jpg",
     "description":"原型奔驰AMG‑ONE，均衡全能超跑，抓地力优秀，竞速综合表现很强。"
   },
@@ -87,6 +91,7 @@
     "braking":7.7,
     "handling":9.2,
     "source":"传奇车业",
+	"lapTime": 57.624,
     "image":"./assets/image/emerus.jpg",
     "description":"迈凯伦Senna原型，刹车与弯道性能拉满，综合圈速第一梯队超跑。"
   },
@@ -102,6 +107,7 @@
     "braking":7.1,
     "handling":8.6,
     "source":"传奇车业",
+	"lapTime": 58.893,
     "image":"./assets/image/thrax.jpg",
     "description":"外观华丽，加速性能优秀，高速行驶稳定性不错。"
   },
@@ -116,6 +122,7 @@
     "acceleration":8.5,
     "braking":7.2,
     "handling":8.9,
+	"lapTime": 58.959,
     "source":"南圣安地列斯汽车商店",
     "image":"./assets/image/s80rr.jpg",
     "description":"方程式风格街道超跑，下压力充足，弯道表现十分强悍。"
@@ -132,6 +139,7 @@
     "braking":6.0,
     "handling":7.8,
     "source":"传奇车业",
+	"lapTime": 1.00.860,
     "image":"./assets/image/tyrant.jpg",
     "description":"直线极速优秀，刹车偏弱，大直道地图表现亮眼。"
   },
@@ -147,6 +155,7 @@
     "braking":6.7,
     "handling":8.2,
     "source":"传奇车业",
+	"lapTime": 59.660,
     "image":"./assets/image/cyclone2.jpg",
     "description":"纯电动超跑，起步爆发极强，支持阿浩工坊升级改装。"
   },
@@ -162,6 +171,7 @@
     "braking":7.0,
     "handling":8.4,
     "source":"传奇车业",
+	"lapTime": 59.643,
     "image":"./assets/image/tigon.jpg",
     "description":"复古造型超跑，各项性能均衡，改装潜力大。"
   },
@@ -177,6 +187,7 @@
     "braking":6.9,
     "handling":8.5,
     "source":"传奇车业",
+	"lapTime": 57.775,
     "image":"./assets/image/furia.jpg",
     "description":"中置引擎超跑，加速强劲，适合大多数赛道环境。"
   },
@@ -192,6 +203,7 @@
     "braking":6.4,
     "handling":8.0,
     "source":"传奇车业",
+	"lapTime": 1.00.815,
     "image":"./assets/image/zorrusso.jpg",
     "description":"性价比超跑，极速表现不错，刹车性能存在短板。"
   },
@@ -207,6 +219,7 @@
     "braking":7.3,
     "handling":8.7,
     "source":"传奇车业",
+	"lapTime": 1.01.328,
     "image":"./assets/image/zeno.jpg",
     "description":"现代电动超跑，综合实力优秀，可安装导弹干扰器。"
   },
@@ -222,6 +235,7 @@
     "braking":7.4,
     "handling":8.8,
     "source":"传奇车业",
+	"lapTime": 58.658,
     "image":"./assets/image/lm87.jpg",
     "description":"勒芒原型赛车风格，弯道抓地力极强，赛道专用向超跑。"
   },
@@ -237,6 +251,7 @@
     "braking":6.6,
     "handling":8.2,
     "source":"传奇车业",
+	"lapTime": 1.01.394,
     "image":"./assets/image/nero.jpg",
     "description":"布加迪原型超跑，可以改装尼罗定制版，直线能力优秀。"
   },
@@ -252,6 +267,7 @@
     "braking":5.8,
     "handling":7.6,
     "source":"传奇车业",
+	"lapTime": 1.05.699,
     "image":"./assets/image/taipan.jpg",
     "description":"基于轩尼诗毒液F5设计，游戏极速第一梯队，缺点刹车偏弱。"
   },
@@ -267,6 +283,7 @@
       "braking": 5.6,
       "handling": 7.2,
       "source": "传奇车业",
+	  "lapTime": 1.04.365,
       "image": "./assets/image/adder.jpg",
       "description": "原型布加迪威龙，老牌顶级超跑，直线极速强劲，弯道操控偏笨重。"
     },
@@ -282,6 +299,7 @@
       "braking": 6.2,
       "handling": 8.0,
       "source": "传奇车业",
+	  "lapTime": 1.01.578,
       "image": "./assets/image/turismor.jpg",
       "description": "原型法拉利LaFerrari，混动超跑，综合性能均衡，万金油车型适配多数场景。"
     },
@@ -297,6 +315,7 @@
       "braking": 6.0,
       "handling": 7.7,
       "source": "传奇车业",
+	  "lapTime": 1.00.794,
       "image": "./assets/image/osiris.jpg",
       "description": "原型帕加尼Huayra，车身轻盈转向灵敏，极限高但容易甩尾，需要精细操控。"
     },
@@ -312,6 +331,7 @@
       "braking": 5.3,
       "handling": 7.0,
       "source": "传奇车业",
+	  "lapTime": 1.00.677,
       "image": "./assets/image/x80proto.jpg",
       "description": "原型法拉利FXX-K，未来赛道风格，加速爆发力极强，高速状态极易失控。"
     },
@@ -327,6 +347,7 @@
       "braking": 5.7,
       "handling": 7.5,
       "source": "传奇车业",
+	  "lapTime": 1.02.112,
       "image": "./assets/image/reaper.jpg",
       "description": "原型科尼赛克One:1，极速表现优秀，刹车性能偏弱，直线加速能力突出。"
     },
@@ -342,6 +363,7 @@
       "braking": 6.5,
       "handling": 7.9,
       "source": "传奇车业",
+	  "lapTime": 1.01.678,
       "image": "./assets/image/entityxf.jpg",
       "description": "原型科尼赛克CCX，四驱布局，刹车优秀高速稳定，容错率高，适合民间赛事。"
     },
@@ -357,6 +379,7 @@
       "braking": 5.9,
       "handling": 8.1,
       "source": "传奇车业",
+	  "lapTime": 1.02.396,
       "image": "./assets/image/cheetah.jpg",
       "description": "原型法拉利恩佐，后驱转向灵敏弯道强悍，高速度下容易甩尾，收藏竞速两用。"
     },
@@ -372,6 +395,7 @@
       "braking": 5.2,
       "handling": 7.2,
       "source": "传奇车业",
+	  "lapTime": 1.02.462,
       "image": "./assets/image/infernus.jpg",
       "description": "原型兰博基尼蝙蝠，大马力后驱，刹车性能偏弱，油门过大容易打滑，入门超跑。"
     },
@@ -387,6 +411,7 @@
       "braking": 5.7,
       "handling": 7.5,
       "source": "传奇车业",
+	  "lapTime": 1.03.864,
       "image": "./assets/image/vacca.jpg",
       "description": "原型兰博基尼盖拉多，综合表现均衡，没有突出短板，平民入门级超跑。"
     },
@@ -402,6 +427,7 @@
       "braking": 5.1,
       "handling": 6.8,
       "source": "传奇车业",
+	  "lapTime": 1.07.450,
       "image": "./assets/image/bullet.jpg",
       "description": "原型福特GT，美式后驱超跑直线性能强悍，弯道侧倾大，刹车表现一般。"
     },
@@ -417,6 +443,7 @@
       "braking": 6.2,
       "handling": 7.8,
       "source": "传奇车业",
+	  "lapTime": 1.04.081,
       "image": "./assets/image/entityxxr.jpg",
       "description": "原型科尼赛克Agera XS，本质XF的赛道强化版，高速稳定性极强，弯道极限很高。"
     },
@@ -432,6 +459,7 @@
       "braking": 5.6,
       "handling": 7.3,
       "source": "传奇车业",
+	  "lapTime": 1.00.010,
       "image": "./assets/image/devesteight.jpg",
       "description": "原型Devel Sixteen，大排量超跑，直线加速暴力，高速状态下操控容易失控。"
     },
@@ -447,6 +475,7 @@
       "braking": 6.5,
       "handling": 7.9,
       "source": "传奇车业",
+	  "lapTime": 58.742,
       "image": "./assets/image/ignus.jpg",
       "description": "原型兰博基尼Sian，混动限量超跑，起步爆发极强，外观极具攻击性。"
     },
@@ -462,6 +491,7 @@
       "braking": 6.0,
       "handling": 7.5,
       "source": "传奇车业",
+	  "lapTime": 1.00.678,
       "image": "./assets/image/tezeract.jpg",
       "description": "原型兰博基尼Terzo Millennio，纯电动概念超跑，极速天花板级别，刹车偏弱。"
     },
@@ -477,6 +507,7 @@
       "braking": 6.3,
       "handling": 7.6,
       "source": "传奇车业",
+	  "lapTime": 1.01.312,
       "image": "./assets/image/cyclone.jpg",
       "description": "原型Rimac Concept Two，纯电动四驱超跑，起步加速恐怖，极速表现一般。"
     },
@@ -770,6 +801,87 @@
 						      },
 							    {
 							      "id": 51,
+							      "name": "培罗 义塔力GTB",
+							      "type": "super",
+							      "typeName": "超级跑车",
+							      "dlc": "不义之财第二弹",
+							      "price": 1899000,
+							      "topSpeed": 132.25,
+							      "acceleration": 8.0,
+							      "braking": 6.2,
+							      "handling": 7.6,
+								  "lapTime": "1:01.311",
+							      "source": "传奇车业",
+							      "image": "./assets/image/turismogtbc.jpg",
+							      "description": "原型迈凯伦570s，赛道取向超跑，轻量化车身操控极限高。"
+							    },
+						    {
+						      "id": 52,
+						      "name": "古罗帝 义警",
+						      "type": "super",
+						      "typeName": "超级跑车",
+						      "dlc": "走私犯大进击",
+						      "price": 3750000,
+						      "topSpeed": 146.75,
+						      "acceleration": 8.9,
+						      "braking": 7.0,
+						      "handling": 8.2,
+						      "source": "传奇车业",
+							  "lapTime": "55.872",
+						      "image": "./assets/image/scramjet.jpg",
+						      "description": "搭载火箭推进器的经典超跑，加速能力爆表，可玩性极强。"
+						    },
+							  {
+							    "id": 53,
+							    "name": "绝品 火箭狂雷",
+							    "type": "super",
+							    "typeName": "超级跑车",
+							    "dlc": "走私犯大行动",
+							    "price": 3880000,
+							    "topSpeed": 130.75,
+							    "acceleration": 9.3,
+							    "braking": 6.5,
+							    "handling": 7.7,
+							    "source": "传奇车业",
+								"lapTime": "59.209",
+							    "image": "./assets/image/rocketvoltic.jpg",
+							    "description": "火箭喷射改装超跑，起步加速恐怖，直线娱乐性拉满。"
+							  },
+							    {
+							      "id": 54,
+							      "name": "绝致 超燃",
+							      "type": "super",
+							      "typeName": "超级跑车",
+							      "dlc": "合约",
+							      "price": 2400000,
+							      "topSpeed": 124.75,
+							      "acceleration": 9.1,
+							      "braking": 6.8,
+							      "handling": 8.0,
+							      "source": "传奇车业",
+								  "lapTime": "57.775",
+							      "image": "./assets/image/burner.jpg",
+							      "description": "后驱布局，加速响应极快，适合直线赛道。"
+							    },
+								{
+								  "id": 55,
+								  "name": "LRC GT",
+								  "type": "super",
+								  "typeName": "超级跑车",
+								  "dlc": "合约",
+								  "price": 2650000,
+								  "topSpeed": 130,
+								  "acceleration": 9.7,
+								  "braking": 2.5,
+								  "handling": 10,
+								  "source": "传奇车业",
+								  "lapTime": "58.275",
+								  "image": "./assets/image/burner.jpg",
+								  "description": "后驱布局，加速响应极快，适合直线赛道。"
+								}
+								
+
+]
 							      "name": "培罗 义塔力GTB",
 							      "type": "super",
 							      "typeName": "超级跑车",
