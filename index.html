@@ -4,72 +4,95 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GTA线上载具数据整合库</title>
-    <!-- 引入Tailwind CDN，解决背景丢失！！你本地css修改出错，直接CDN保证样式生效 -->
+    <!-- 只保留Tailwind，删掉不存在的style.css引用 -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body class="bg-slate-900 text-gray-100 min-h-screen">
     <div class="container mx-auto px-4 py-6">
-        <h1 class="text-3xl font-bold mb-6">GTA线上载具数据整合库</h1>
+        <h1 class="text-3xl font-bold mb-6 text-center">GTA线上载具数据整合库</h1>
+
         <!-- 筛选栏 -->
-        <div class="grid sm:grid-cols-3 gap-4 mb-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mb-6">
             <input 
                 id="searchInput" 
                 type="text" 
                 placeholder="输入载具名称搜索..." 
-                class="px-3 py-2 rounded bg-slate-700 text-white border-none outline-none"
+                class="w-full px-3 py-2 rounded bg-slate-800 border border-slate-700 text-white outline-none"
             >
-            <select id="typeSelect" class="px-3 py-2 rounded bg-slate-700 text-white border-none outline-none">
+            <select id="typeSelect" 
+                class="w-full px-3 py-2 rounded bg-slate-800 border border-slate-700 text-white outline-none"
+            >
                 <option value="">全部类型</option>
-                <!-- ✅ value改成和json type一模一样中文字符串 -->
-                <option value="超级跑车">超级跑车</option>
-                <option value="跑车">跑车</option>
+                <option value="super">超级跑车</option>
+                <option value="sports">跑车</option>
             </select>
-            <select id="sortSelect" class="px-3 py-2 rounded bg-slate-700 text-white border-none outline-none">
-                <option value="default">默认排序</option>
-                <option value="price-desc">价格 从高到低</option>
-                <option value="price-asc">价格 从低到高</option>
-                <option value="topspeed-desc">极速 从高到低</option>
-                <option value="topspeed-asc">极速 从低到高</option>
-                <option value="ccgp-asc">CCGP圈速 由快到慢</option>
-                <option value="ccgp-desc">CCGP圈速 由慢到快</option>
-                <option value="mountain-asc">山道之王 由快到慢</option>
-                <option value="mountain-desc">山道之王 由慢到快</option>
-            </select>
+        <select
+            id="sortSelect"
+            class="w-full px-3 py-2 rounded bg-slate-800 border border-slate-700 text-white outline-none"
+        >
+            <option value="default">默认排序</option>
+            <option value="price-desc">价格升序</option>
+            <option value="price-asc">价格降序</option>
+            <option value="topspeed-desc">最高速度从快到慢</option>
+			<option value="topspeed-asc">最高速度从慢到快</option>
+            <option value="ccgp-asc">CCGP圈速 由快到慢</option>
+            <option value="ccgp-desc">CCGP圈速 由慢到快</option>
+            <option value="mountain-asc">山道之王 由快到慢</option>
+            <option value="mountain-desc">山道之王 由慢到快</option>
+        </select>
+
         </div>
-        <!-- 对比按钮 -->
-        <button id="openCompareBtn" class="w-full sm:w-auto px-6 py-2 mb-6 bg-blue-600 hover:bg-blue-500 text-white rounded">
+
+        <button 
+            id="openCompareBtn" 
+            class="w-full sm:w-auto px-6 py-2 mb-6 bg-blue-600 hover:bg-blue-500 text-white rounded"
+        >
             打开对比面板
         </button>
-        <!-- 车辆列表容器 -->
-        <div id="vehicleList" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <!-- JS动态渲染车辆卡片 -->
+
+        <!-- 车辆列表 -->
+        <div 
+            id="vehicleList" 
+            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+        >
         </div>
     </div>
+
+    <!-- 详情弹窗 -->
+    <div 
+        id="carDetailModal" 
+        class="hidden fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4"
+    >
+        <div class="bg-slate-800 max-w-2xl w-full max-h-[90vh] overflow-y-auto rounded-lg p-6 relative">
+            <button 
+                id="closeDetailBtn" 
+                class="absolute top-3 right-3 text-2xl text-gray-400 hover:text-white"
+            >
+                ×
+            </button>
+            <div id="detailContent"></div>
+        </div>
+    </div>
+
     <!-- 对比弹窗 -->
-    <div id="compareModal" class="hidden fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4">
-        <div class="bg-slate-800 rounded-lg p-6 w-full max-w-5xl max-h-[90vh] overflow-y-auto">
-            <div class="flex justify-between items-center mb-4">
-                <h2 class="text-xl font-bold">载具对比</h2>
-                <button id="closeCompare" class="text-gray-400 hover:text-white text-2xl">&times;</button>
-            </div>
+    <div 
+        id="compareModal" 
+        class="hidden fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4"
+    >
+        <div class="bg-slate-800 max-w-4xl w-full max-h-[90vh] overflow-y-auto rounded-lg p-6 relative">
+            <button 
+                id="closeCompareBtn" 
+                class="absolute top-3 right-3 text-2xl text-gray-400 hover:text-white"
+            >
+                ×
+            </button>
             <div id="compareContent"></div>
         </div>
     </div>
-    <!-- 车辆详情弹窗 -->
-    <div id="carDetailModal" class="hidden fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4">
-        <div class="bg-slate-800 rounded-lg p-6 w-full max-w-2xl max-h-[90vh] overflow-y-auto">
-            <div class="flex justify-between items-center mb-4">
-                <h2 id="detailName" class="text-xl font-bold"></h2>
-                <button id="closeDetail" class="text-gray-400 hover:text-white text-2xl">&times;</button>
-            </div>
-            <img id="detailImg" class="w-full h-64 object-cover rounded mb-4 bg-slate-700" alt="">
-            <div id="detailContent" class="space-y-2"></div>
-        </div>
-    </div>
-    <!-- 脚本引用：顺序不能乱！ -->
-    <script src="./js/main.js"></script>
-    <script src="./js/filter.js"></script>
-    <script src="./js/compare.js"></script>
+
+    <!-- ✅ 全部改成大写 ./JS/ 和你仓库文件夹名完全一致 -->
+    <script src="./JS/main.js"></script>
+    <script src="./JS/filter.js"></script>
+    <script src="./JS/compare.js"></script>
 </body>
 </html>
