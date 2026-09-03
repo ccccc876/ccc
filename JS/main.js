@@ -77,41 +77,56 @@ window.onload = function(){
 }
 
 // 车辆详情弹窗
-function openCarDetail(car){
-    const modal = document.getElementById('carDetailModal');
-    document.getElementById('detailImg').src = car.image;
-    document.getElementById('detailName').innerText = car.name;
-    
-    let html = "";
-    html += `<p><b>类型：</b>${car.typeName}</p>`;
-    html += `<p><b>DLC：</b>${car.dlc}</p>`;
-    html += `<p><b>价格：</b>$${car.price.toLocaleString()}</p>`;
-    html += `<p><b>极速：</b>${car.topSpeed}</p>`;
-    html += `<p><b>加速：</b>${car.acceleration}</p>`;
-    html += `<p><b>刹车：</b>${car.braking}</p>`;
-    html += `<p><b>操控：</b>${car.handling}</p>`;
-    html += `<p><b>CCGP圈速：</b>${car.lapTime ? car.lapTime + ' 秒' : '暂无数据'}</p>`;
-    html += `<p><b>山道之王圈速：</b>${car.mountainLapTime ? car.mountainLapTime + ' 秒' : '暂无数据'}</p>`;
-    html += `<p><b>来源：</b>${car.source}</p>`;
-    html += `<p class="mt-3"><b>简介：</b>${car.description}</p>`;
+function openCarDetail(car) {
+// 弹窗关闭逻辑
+const modal = document.getElementById('carDetailModal');
+const closeBtn = document.getElementById('closeDetailBtn');
 
-    // 车辆介绍链接
-    if(car.introUrl && car.introUrl.trim() !== ""){
-        html += `<p class="mt-2"><b>车辆介绍：</b><a href="${car.introUrl}" target="_blank" rel="noopener noreferrer" class="text-blue-400 underline hover:text-blue-300">点击查看详情</a></p>`;
+// 1. 点击关闭按钮关闭弹窗
+closeBtn.addEventListener('click', () => {
+    modal.classList.add('hidden');
+});
+
+// 2. 点击非内容的遮罩区域关闭弹窗
+modal.addEventListener('click', (e) => {
+    // 仅点击遮罩层本身时触发，点击内容区域不会误关
+    if (e.target === modal) {
+        modal.classList.add('hidden');
     }
+});
 
-    document.getElementById('detailContent').innerHTML = html;
+// 3. 按 ESC 键关闭弹窗（可选增强体验）
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+        modal.classList.add('hidden');
+    }
+});
+
+    // 拼接完整详情内容，统一插入容器
+    const html = `
+        <img 
+            src="${car.image}" 
+            alt="${car.name}"
+            class="w-full h-64 object-cover rounded-lg mb-4"
+            onerror="this.src='https://via.placeholder.com/800x400?text=图片加载失败'"
+        >
+        <h2 class="text-xl font-bold text-white mb-3">${car.name}</h2>
+        <div class="space-y-1.5 text-gray-200 text-sm">
+            <p><span class="text-gray-400">类型：</span>${car.typeName}</p>
+            <p><span class="text-gray-400">DLC：</span>${car.dlc}</p>
+            <p><span class="text-gray-400">价格：</span>$${car.price.toLocaleString()}</p>
+            <p><span class="text-gray-400">极速：</span>${car.topSpeed}</p>
+            <p><span class="text-gray-400">加速：</span>${car.acceleration}</p>
+            <p><span class="text-gray-400">刹车：</span>${car.braking}</p>
+            <p><span class="text-gray-400">操控：</span>${car.handling}</p>
+            <p><span class="text-gray-400">CC圈速：</span>${car.lapTime ? car.lapTime + ' 秒' : '暂无数据'}</p>
+            <p><span class="text-gray-400">山道之王圈速：</span>${car.mountainLapTime ? car.mountainLapTime + ' 秒' : '暂无数据'}</p>
+            <p><span class="text-gray-400">来源：</span>${car.source}</p>
+            <p class="pt-2 mt-2 border-t border-gray-600"><span class="text-gray-400">简介：</span>${car.description}</p>
+            ${car.introUrl ? `<p class="mt-2"><span class="text-gray-400">介绍链接：</span><a href="${car.introUrl}" target="_blank" class="text-blue-400 hover:underline">查看详情</a></p>` : ''}
+        </div>
+    `;
+
+    detailContent.innerHTML = html;
     modal.classList.remove('hidden');
 }
-
-// 关闭弹窗事件，保留这两段，不要重复写
-document.getElementById('closeDetail').addEventListener('click', function(){
-    document.getElementById('carDetailModal').classList.add('hidden');
-});
-
-document.getElementById('carDetailModal').addEventListener('click', function(e){
-    if(e.target === this){
-        this.classList.add('hidden');
-    }
-});
-
