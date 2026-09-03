@@ -17,10 +17,11 @@ function timeToSeconds(timeStr) {
 function renderFilter() {
     let resultList = [...allVehicles];
 
-    // 1. 类型筛选（对应字段 typeName）
+    // 1. 类型筛选（对应字段 type）
     const typeVal = typeSelect.value;
     if (typeVal) {
-        resultList = resultList.filter(item => item.typeName === typeVal);
+        resultList = resultList.filter(item => item.type === typeVal);
+    }
     }
 
     // 2. 名称搜索
