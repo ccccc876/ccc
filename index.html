@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GTA线上载具数据整合库</title>
-    <!-- 样式文件：相对路径 -->
+    <!-- 重点：你仓库没有css文件夹！！！
+    方案A：如果你打算新建一个叫css的文件夹，放入style.css，就启用下面一行
     <link rel="stylesheet" href="./css/style.css">
+    -->
 </head>
 <body class="bg-slate-900 text-gray-100 min-h-screen">
 
     <div class="container mx-auto px-4 py-6">
         <h1 class="text-3xl font-bold mb-6">GTA线上载具数据整合库</h1>
 
-        <!-- 筛选栏 -->
         <div class="grid sm:grid-cols-3 gap-4 mb-6">
             <input 
                 id="searchInput" 
@@ -40,18 +41,14 @@
             </select>
         </div>
 
-        <!-- 对比按钮 -->
         <button id="openCompareBtn" class="w-full sm:w-auto px-6 py-2 mb-6 bg-blue-600 hover:bg-blue-500 text-white rounded">
             打开对比面板
         </button>
 
-        <!-- 车辆列表容器 -->
         <div id="vehicleList" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <!-- JS动态渲染 -->
         </div>
     </div>
 
-    <!-- 对比弹窗 -->
     <div id="compareModal" class="hidden fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4">
         <div class="bg-slate-800 rounded-lg p-6 w-full max-w-5xl max-h-[90vh] overflow-y-auto">
             <div class="flex justify-between items-center mb-4">
@@ -62,7 +59,6 @@
         </div>
     </div>
 
-    <!-- 车辆详情弹窗 -->
     <div id="carDetailModal" class="hidden fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4">
         <div class="bg-slate-800 rounded-lg p-6 w-full max-w-2xl max-h-[90vh] overflow-y-auto">
             <div class="flex justify-between items-center mb-4">
@@ -74,11 +70,10 @@
         </div>
     </div>
 
-    <!-- 脚本引用：顺序不能乱，全部相对路径 -->
-    <script src="./js/main.js"></script>
-    <script src="./js/filter.js"></script>
-    <script src="./js/compare.js"></script>
+    <!-- ⚠️文件夹名字是大写 JS，路径必须写 ./JS/！！！ -->
+    <script src="./JS/main.js"></script>
+    <script src="./JS/filter.js"></script>
+    <script src="./JS/compare.js"></script>
 
 </body>
 </html>
-
