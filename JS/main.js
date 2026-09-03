@@ -76,39 +76,22 @@ window.onload = function(){
     loadData();
 }
 
-// 车辆详情弹窗
+// 车辆详情弹窗（全局作用域，确保点击事件能调用到）
 function openCarDetail(car) {
-// 弹窗关闭逻辑
-const modal = document.getElementById('carDetailModal');
-const closeBtn = document.getElementById('closeDetailBtn');
+    const modal = document.getElementById('carDetailModal');
+    const detailContent = document.getElementById('detailContent');
 
-// 1. 点击关闭按钮关闭弹窗
-closeBtn.addEventListener('click', () => {
-    modal.classList.add('hidden');
-});
-
-// 2. 点击非内容的遮罩区域关闭弹窗
-modal.addEventListener('click', (e) => {
-    // 仅点击遮罩层本身时触发，点击内容区域不会误关
-    if (e.target === modal) {
-        modal.classList.add('hidden');
+    if (!modal || !detailContent) {
+        console.error('弹窗容器不存在，请检查HTML的ID是否正确');
+        return;
     }
-});
 
-// 3. 按 ESC 键关闭弹窗（可选增强体验）
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
-        modal.classList.add('hidden');
-    }
-});
-
-    // 拼接完整详情内容，统一插入容器
     const html = `
         <img 
             src="${car.image}" 
             alt="${car.name}"
             class="w-full h-64 object-cover rounded-lg mb-4"
-            onerror="this.src='https://via.placeholder.com/800x400?text=图片加载失败'"
+            onerror="this.src='./img/placeholder.webp'"
         >
         <h2 class="text-xl font-bold text-white mb-3">${car.name}</h2>
         <div class="space-y-1.5 text-gray-200 text-sm">
@@ -128,5 +111,42 @@ document.addEventListener('keydown', (e) => {
     `;
 
     detailContent.innerHTML = html;
+    // 显示弹窗：先加flex布局，再移除hidden
+    modal.classList.add('flex');
     modal.classList.remove('hidden');
 }
+
+// 页面加载完成后统一初始化
+window.onload = function(){
+    loadData();
+
+    const modal = document.getElementById('carDetailModal');
+    const closeBtn = document.getElementById('closeDetailBtn');
+
+    // 关闭按钮关闭
+    if(closeBtn) {
+        closeBtn.addEventListener('click', () => {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        });
+    }
+
+    // 点击遮罩空白处关闭
+    if(modal) {
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }
+        });
+    }
+
+    // ESC键关闭弹窗
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+    });
+}
+
