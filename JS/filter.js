@@ -22,7 +22,7 @@ function renderFilter() {
     if (typeVal) {
         resultList = resultList.filter(item => item.type === typeVal);
     }
-    }
+
 
     // 2. 名称搜索
     const keyword = searchInput.value.trim().toLowerCase();
